@@ -8,7 +8,7 @@ AppName: url2img
 <div style="text-align:center; width:80%; margin:0 auto;">
 <h3>Simple, lightweight jQuery Program to get website screenshots</h3>
 <b>Enter Full Website URL:</b><br/>
-<input type="text" id="url" placeholder="http://www.iamrohit.in"> 
+<input type="text" id="url" placeholder="https://rafled.com/"> 
 <br/>
 <button id="url2img">SUBMIT</button>
 <br/>
@@ -18,7 +18,10 @@ AppName: url2img
 <br/>
 <a href="http://iamrohit.in">Created By Rohit Kumar</a>	
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
 <script>
 $(function() {
 
@@ -27,7 +30,7 @@ $(function() {
 		$("img").attr('src', "");
 		var url = $("#url").val();
 		  $.ajax({
-        	url: 'https://www.googleapis.com/pagespeedonline/v1/runPagespeed?url=' + url + '&screenshot=true',
+        	url: 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + url + '&screenshot=true',
         	context: this,
         	type: 'GET',
         	dataType: 'json',
@@ -38,7 +41,7 @@ $(function() {
             	$("#msg").html('');
             },
             error:function(e) {
-            	$("#msg").html("Error to fetch image preview. Please enter full url (eg: http://www.iamrohit.in)");
+            	$("#msg").html("Error to fetch image preview. Please enter full url (eg: https://rafled.com/)");
             }
         });
        
